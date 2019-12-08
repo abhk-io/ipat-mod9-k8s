@@ -9,3 +9,23 @@ webserver    LoadBalancer   10.109.37.78   <pending>     80:32135/TCP   2m37s
 ubuntu@ip-172-31-94-54:~$ 
 ubuntu@ip-172-31-94-54:~$ 
 ubuntu@ip-172-31-94-54:~$ 
+
+ubuntu@ip-172-31-94-54:~$ kubectl get services
+NAME         TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+kubernetes   ClusterIP      10.96.0.1      <none>        443/TCP        43h
+webserver    LoadBalancer   10.109.37.78   <pending>     80:32135/TCP   6m18s
+ubuntu@ip-172-31-94-54:~$ kubectl get deployments
+NAME        READY   UP-TO-DATE   AVAILABLE   AGE
+webserver   2/2     2            2           17h
+ubuntu@ip-172-31-94-54:~$ kubectl delete service webserver
+service "webserver" deleted
+ubuntu@ip-172-31-94-54:~$ kubectl delete deployment  webserver
+deployment.apps "webserver" deleted
+ubuntu@ip-172-31-94-54:~$ kubectl get services
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   43h
+ubuntu@ip-172-31-94-54:~$ kubectl get deployments
+No resources found in default namespace.
+ubuntu@ip-172-31-94-54:~$  
+
+

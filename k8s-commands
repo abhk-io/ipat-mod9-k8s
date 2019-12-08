@@ -1,0 +1,11 @@
+ubuntu@ip-172-31-94-54:~$ kubectl get nodes
+NAME               STATUS   ROLES    AGE   VERSION
+ip-172-31-82-159   Ready    <none>   43h   v1.16.3
+ip-172-31-94-54    Ready    master   43h   v1.16.3
+ubuntu@ip-172-31-94-54:~$ kubectl get services
+NAME         TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+kubernetes   ClusterIP      10.96.0.1      <none>        443/TCP        43h
+webserver    LoadBalancer   10.109.37.78   <pending>     80:32135/TCP   2m37s
+ubuntu@ip-172-31-94-54:~$ 
+ubuntu@ip-172-31-94-54:~$ 
+ubuntu@ip-172-31-94-54:~$ 
